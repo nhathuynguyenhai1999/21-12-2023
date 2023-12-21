@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Check</title>
+</head>
+<body>
+
+<script>
+    // Sử dụng hàm prompt() để lấy thông tin nhiệt độ từ người truy cập
+    var temperature = prompt("Nhập nhiệt độ hiện tại:");
+
+    // Chuyển đổi chuỗi thành số
+    temperature = parseFloat(temperature);
+
+    // Kiểm tra nếu nhiệt độ trên 100
+    if (temperature > 100) {
+        alert("Nhiệt độ quá cao. Vui lòng giảm nhiệt độ!");
+    } else if (temperature < 20) {
+        // Kiểm tra nếu nhiệt độ dưới 20
+        alert("Nhiệt độ quá thấp. Vui lòng tăng nhiệt độ!");
+    } else {
+        // Nếu nhiệt độ nằm trong khoảng an toàn
+        alert("Nhiệt độ ổn định. Không cần thêm biện pháp!");
+    }
+</script>
+
+</body>
+</html>

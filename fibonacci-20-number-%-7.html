@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Numbers Divisible by 7</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+<h2>Tính tổng của 30 số đầu tiên chia hết cho 7</h2>
+
+<p id="result"></p>
+
+<script>
+    // Function to calculate the sum of the first 30 numbers divisible by 7
+    function sumOfNumbersDivisibleBy7() {
+        let sum = 0;
+        let count = 0;
+        let number = 1;
+
+        while (count < 30) {
+            if (number % 7 === 0) {
+                sum += number;
+                count++;
+            }
+            number++;
+        }
+
+        return sum;
+    }
+
+    // Display the result on the web page
+    document.getElementById("result").innerHTML = "Tổng của 30 số đầu tiên chia hết cho 7 là: " + sumOfNumbersDivisibleBy7();
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibonacci Sequence</title>
+</head>
+<body>
+
+<script>
+  function generateFibonacci(n) {
+    var fibonacciSequence = [];
+
+    for (var i = 0; i < n; i++) {
+      if (i <= 1) {
+        fibonacciSequence.push(i);
+      } else {
+        var nextNumber = fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
+        fibonacciSequence.push(nextNumber);
+      }
+    }
+
+    return fibonacciSequence;
+  }
+
+  // Hiển thị 20 số đầu tiên trong dãy Fibonacci
+  var fibonacci20 = generateFibonacci(20);
+  document.write("Dãy Fibonacci đầu tiên gồm 20 số: " + fibonacci20.join(", "));
+</script>
+
+</body>
+</html>
