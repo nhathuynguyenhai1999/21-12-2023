@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .output {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>FizzBuzz</h1>
+<div class="output" id="output"></div>
+
+<script>
+    // Hàm FizzBuzz
+    function fizzBuzz() {
+        var outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = ""; // Đảm bảo rằng output trống trước khi in kết quả mới
+
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                outputDiv.innerHTML += "FizzBuzz ";
+            } else if (i % 3 === 0) {
+                outputDiv.innerHTML += "Fizz ";
+            } else if (i % 5 === 0) {
+                outputDiv.innerHTML += "Buzz ";
+            } else {
+                outputDiv.innerHTML += i + " ";
+            }
+        }
+    }
+
+    // Gọi hàm khi trang được tải
+    window.onload = fizzBuzz;
+</script>
+</body>
+</html>
