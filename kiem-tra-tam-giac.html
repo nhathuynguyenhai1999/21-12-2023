@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra tam giác</title>
+    <script>
+        function kiemTraTamGiac() {
+            // Lấy giá trị từ các ô input
+            var a = parseFloat(document.getElementById('a').value);
+            var b = parseFloat(document.getElementById('b').value);
+            var c = parseFloat(document.getElementById('c').value);
+
+            // Kiểm tra điều kiện tam giác
+            if (a + b > c && b + c > a && a + c > b) {
+                alert('Ba số này là cạnh của một tam giác');
+            } else {
+                alert('Ba số này không phải là cạnh của một tam giác');
+            }
+        }
+    </script>
+</head>
+<body>
+<h2>Kiểm tra tam giác</h2>
+<label for="a">Nhập a: </label>
+<input type="number" id="a" step="any">
+<br>
+<label for="b">Nhập b: </label>
+<input type="number" id="b" step="any">
+<br>
+<label for="c">Nhập c: </label>
+<input type="number" id="c" step="any">
+<br>
+<button onclick="kiemTraTamGiac()">Kiểm tra</button>
+</body>
+</html>

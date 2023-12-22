@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Giá Điện</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Tính Giá Điện</h2>
+
+<label for="kwh">Số kWh tiêu thụ:</label>
+<input type="number" id="kwh" placeholder="Nhập số kWh" required>
+
+<label for="price">Giá điện (VNĐ/kWh):</label>
+<input type="number" id="price" placeholder="Nhập giá điện" required>
+
+<button onclick="calculateElectricityBill()">Tính Giá Điện</button>
+
+<div id="result"></div>
+
+<script>
+    function calculateElectricityBill() {
+        // Lấy giá trị từ các trường input
+        var kwh = parseFloat(document.getElementById('kwh').value);
+        var price = parseFloat(document.getElementById('price').value);
+
+        // Kiểm tra xem có giá trị hợp lệ không
+        if (isNaN(kwh) || isNaN(price)) {
+            alert("Vui lòng nhập số hợp lệ.");
+            return;
+        }
+
+        // Tính giá điện
+        var totalCost = kwh * price;
+
+        // Hiển thị kết quả
+        document.getElementById('result').innerHTML = "Tổng giá điện là: " + totalCost.toLocaleString() + " VNĐ";
+    }
+</script>
+
+</body>
+</html>
