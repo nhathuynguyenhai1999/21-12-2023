@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng vòng lặp do while để viết lại chương trình yêu cầu nhập các số từ 1 -> 10
+      ở ví dụ trong phần vòng lặp while.</title>
+</head>
+<body>
+  <input type="text" placeholder="Nhập số" id="number">
+  <button type="button" onclick="nhapluonsogi()">Submit</button>
+  <script>
+      function nhapluonsogi(){
+          let num = null;
+          do {
+              num =  document.getElementById("number").value;
+          } while (num < 1 || num > 10);
+          alert("Số bạn vừa nhập là " + num);
+      }
+
+  </script>
+</body>
+</html>
