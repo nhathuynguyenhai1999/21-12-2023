@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+
+<h2>Nhập hệ số của phương trình ax^2 + bx + c = 0</h2>
+
+<form id="quadraticForm">
+  <label for="coefficientA">Hệ số a:</label>
+  <input type="number" id="coefficientA" required>
+  <br>
+  <label for="coefficientB">Hệ số b:</label>
+  <input type="number" id="coefficientB" required>
+  <br>
+  <label for="coefficientC">Hệ số c:</label>
+  <input type="number" id="coefficientC" required>
+  <br>
+  <button type="button" onclick="solveQuadraticEquation()">Giải phương trình</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+  function solveQuadraticEquation() {
+    // Lấy giá trị từ ô nhập liệu
+    var coefficientA = parseFloat(document.getElementById('coefficientA').value);
+    var coefficientB = parseFloat(document.getElementById('coefficientB').value);
+    var coefficientC = parseFloat(document.getElementById('coefficientC').value);
+
+    // Kiểm tra nếu giá trị là số và không phải là NaN
+    if (!isNaN(coefficientA) && !isNaN(coefficientB) && !isNaN(coefficientC)) {
+      // Kiểm tra nếu a = 0 (phương trình không phải là phương trình bậc 2)
+      if (coefficientA === 0) {
+        document.getElementById('result').innerHTML = "Phương trình không phải là phương trình bậc 2.";
+      } else {
+        // Tính delta
+        var delta = coefficientB * coefficientB - 4 * coefficientA * coefficientC;
+
+        // Kiểm tra giá trị của delta
+        if (delta > 0) {
+          var root1 = (-coefficientB + Math.sqrt(delta)) / (2 * coefficientA);
+          var root2 = (-coefficientB - Math.sqrt(delta)) / (2 * coefficientA);
+          document.getElementById('result').innerHTML = "Nghiệm của phương trình là x₁ = " + root1.toFixed(2) + " và x₂ = " + root2.toFixed(2);
+        } else if (delta === 0) {
+          var root = -coefficientB / (2 * coefficientA);
+          document.getElementById('result').innerHTML = "Phương trình có nghiệm kép: x = " + root.toFixed(2);
+        } else {
+          document.getElementById('result').innerHTML = "Phương trình không có nghiệm thực.";
+        }
+      }
+    } else {
+      // Hiển thị thông báo lỗi nếu người dùng nhập giá trị không hợp lệ
+      document.getElementById('result').innerHTML = "Vui lòng nhập giá trị hợp lệ cho cả ba hệ số.";
+    }
+  }
+</script>
+
+</body>
+</html>

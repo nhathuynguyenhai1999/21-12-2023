@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính diện tích tam giác vuông</title>
+</head>
+<body>
+
+<h2>Nhập độ dài các cạnh tam giác vuông</h2>
+
+<form id="triangleForm">
+    <label for="sideA">Cạnh a:</label>
+    <input type="number" id="sideA" required>
+    <br>
+    <label for="sideB">Cạnh b:</label>
+    <input type="number" id="sideB" required>
+    <br>
+    <button type="button" onclick="calculateArea()">Tính diện tích</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+    function calculateArea() {
+        // Lấy giá trị từ ô nhập liệu
+        var sideA = parseFloat(document.getElementById('sideA').value);
+        var sideB = parseFloat(document.getElementById('sideB').value);
+
+        // Kiểm tra nếu giá trị là số và không phải là NaN
+        if (!isNaN(sideA) && !isNaN(sideB)) {
+            // Tính diện tích tam giác vuông
+            var area = 0.5 * sideA * sideB;
+
+            // Hiển thị kết quả
+            document.getElementById('result').innerHTML = "Diện tích tam giác vuông là: " + area.toFixed(2) + " đơn vị vuông";
+        } else {
+            // Hiển thị thông báo lỗi nếu người dùng nhập giá trị không hợp lệ
+            document.getElementById('result').innerHTML = "Vui lòng nhập giá trị hợp lệ cho cả hai cạnh.";
+        }
+    }
+</script>
+
+</body>
+</html>

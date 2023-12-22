@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích tam giác khi biết cạnh kề a và b</title>
+</head>
+<body>
+    <input type="number" id="canha" placeholder="Nhập cạnh a">
+    <input type="number" id="canhb" placeholder="Nhập cạnh b">
+    <button type="button" onclick="tinh()">okkkk</button>
+    <script>
+        function tinh() {
+            let inputNumber1 = parseInt(document.getElementById("canha").value)
+            let inputNumber2 = parseInt(document.getElementById("canhb").value)
+            let dttriangle = 0.5 * inputNumber1 * inputNumber2;
+            if (!isNaN(inputNumber1) && !isNaN(inputNumber2))
+                alert("Diện tích tam giác vuông là: " + dttriangle.toFixed(0) + " đơn vị vuông");
+            else
+                // Hiển thị thông báo lỗi nếu người dùng nhập giá trị không hợp lệ
+                alert("Vui lòng nhập giá trị hợp lệ cho cả hai cạnh.");
+        }
+
+    </script>
+</body>
+</html>

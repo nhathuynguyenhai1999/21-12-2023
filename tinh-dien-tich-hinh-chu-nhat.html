@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tính diện tích hình chữ nhật</title>
+  <script>
+    function tinhDienTich() {
+      // Lấy giá trị của hai cạnh từ ô nhập liệu
+      var chieuDai = document.getElementById("chieuDai").value;
+      var chieuRong = document.getElementById("chieuRong").value;
+
+      // Kiểm tra xem giá trị nhập vào có phải là số không
+      if (isNaN(chieuDai) || isNaN(chieuRong)) {
+        alert("Vui lòng nhập số hợp lệ cho cả hai cạnh!");
+        return;
+      }
+
+      // Tính diện tích
+      var dienTich = chieuDai * chieuRong;
+
+      // Hiển thị kết quả
+      document.getElementById("ketqua").innerHTML = "Diện tích hình chữ nhật là: " + dienTich;
+    }
+  </script>
+</head>
+<body>
+<h1>Tính diện tích hình chữ nhật</h1>
+
+<label for="chieuDai">Nhập chiều dài: </label>
+<input type="text" id="chieuDai" placeholder="Nhập chiều dài">
+
+<label for="chieuRong">Nhập chiều rộng: </label>
+<input type="text" id="chieuRong" placeholder="Nhập chiều rộng">
+
+<button onclick="tinhDienTich()">Tính diện tích</button>
+
+<p id="ketqua"></p>
+</body>
+</html>
