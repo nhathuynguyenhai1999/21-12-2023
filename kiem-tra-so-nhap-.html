@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiểm tra tuổi</title>
+</head>
+<body>
+
+<h2>Nhập vào một số kiểm tra xem có phải là tuổi của người không</h2>
+
+<form id="ageForm">
+  <label for="ageInput">Tuổi:</label>
+  <input type="number" id="ageInput" required>
+  <br>
+  <button type="button" onclick="checkAge()">Kiểm tra tuổi</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+  function checkAge() {
+    // Lấy giá trị từ ô nhập liệu
+    var age = parseInt(document.getElementById('ageInput').value);
+
+    // Kiểm tra nếu giá trị là số và nằm trong khoảng 1 đến 119
+    if (!isNaN(age) && age > 0 && age < 120) {
+      document.getElementById('result').innerHTML = "Đây là một tuổi hợp lệ.";
+    } else {
+      // Hiển thị thông báo lỗi nếu người dùng nhập giá trị không hợp lệ
+      document.getElementById('result').innerHTML = "Vui lòng nhập một tuổi hợp lệ từ 1 đến 119.";
+    }
+  }
+</script>
+
+</body>
+</html>
