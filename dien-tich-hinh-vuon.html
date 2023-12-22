@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tính diện tích hình vuông</title>
+  <script>
+    function tinhDienTich() {
+      // Lấy giá trị của cạnh từ ô nhập liệu
+      var canh = document.getElementById("canh").value;
+
+      // Kiểm tra xem giá trị nhập vào có phải là số không
+      if (isNaN(canh)) {
+        alert("Vui lòng nhập một số hợp lệ!");
+        return;
+      }
+
+      // Tính diện tích
+      var dienTich = canh * canh;
+
+      // Hiển thị kết quả
+      document.getElementById("ketqua").innerHTML = "Diện tích hình vuông là: " + dienTich;
+    }
+  </script>
+</head>
+<body>
+<h1>Tính diện tích hình vuông</h1>
+
+<label for="canh">Nhập cạnh hình vuông: </label>
+<input type="text" id="canh" placeholder="Nhập cạnh">
+
+<button onclick="tinhDienTich()">Tính diện tích</button>
+
+<p id="ketqua"></p>
+</body>
+</html>

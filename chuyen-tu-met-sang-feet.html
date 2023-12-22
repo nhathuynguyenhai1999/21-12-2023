@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chuyển đổi mét sang feet</title>
+</head>
+<body>
+
+<h2>Chuyển đổi mét sang feet</h2>
+
+<label for="inputMeter">Nhập giá trị mét:</label>
+<input type="number" id="inputMeter" placeholder="Nhập giá trị mét" oninput="convertMeterToFeet()">
+
+<p id="result"></p>
+
+<script>
+  function convertMeterToFeet() {
+    // Lấy giá trị từ ô nhập liệu
+    var meterValue = document.getElementById('inputMeter').value;
+
+    // Kiểm tra xem giá trị có phải là số hay không
+    if (isNaN(meterValue)) {
+      document.getElementById('result').innerHTML = 'Vui lòng nhập một số hợp lệ.';
+      return;
+    }
+
+    // Chuyển đổi từ mét sang feet (1 mét = 3.28084 feet)
+    var feetValue = meterValue * 3.2808;
+
+    // Hiển thị kết quả
+    document.getElementById('result').innerHTML = meterValue + ' mét bằng ' + feetValue.toFixed(2) + ' feet.';
+  }
+</script>
+
+</body>
+</html>
