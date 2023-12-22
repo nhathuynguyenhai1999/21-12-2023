@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính lãi ngân hàng</title>
+    <script>
+        function tinhLaiNganHang() {
+            // Lấy giá trị từ các ô input
+            var soTienBanDau = parseFloat(document.getElementById("soTienBanDau").value);
+            var soThangChoVay = parseInt(document.getElementById("soThangChoVay").value);
+            var laiXuatHangThang = parseFloat(document.getElementById("laiXuatHangThang").value);
+
+            // Tính lãi ngân hàng
+            var laiNganHang = 0;
+            for (var i = 0; i < soThangChoVay; i++) {
+                laiNganHang += (soTienBanDau + laiNganHang) * (laiXuatHangThang / 100);
+            }
+
+            // Hiển thị kết quả
+            var ketQuaElement = document.getElementById("ketQua");
+            ketQuaElement.innerHTML = "Tổng số tiền sau " + soThangChoVay + " tháng là: " + (soTienBanDau + laiNganHang).toFixed(2) + " VNĐ";
+        }
+    </script>
+</head>
+<body>
+<h1>Tính lãi ngân hàng</h1>
+
+<label for="soTienBanDau">Số tiền ban đầu (VNĐ): </label>
+<input type="number" id="soTienBanDau" />
+
+<label for="soThangChoVay">Số tháng cho vay: </label>
+<input type="number" id="soThangChoVay" />
+
+<label for="laiXuatHangThang">Lãi xuất hàng tháng (%): </label>
+<input type="number" step="0.01" id="laiXuatHangThang" />
+
+<button onclick="tinhLaiNganHang()">Tính</button>
+
+<div id="ketQua"></div>
+</body>
+</html>
