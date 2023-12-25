@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tính lãi ngân hàng</title>
+</head>
+<body>
+
+<h1>Tính lãi ngân hàng</h1>
+
+<label for="principal">Số tiền ban đầu:</label>
+<input type="number" id="principal" placeholder="Nhập số tiền ban đầu" required>
+
+<label for="months">Số tháng cho vay:</label>
+<input type="number" id="months" placeholder="Nhập số tháng cho vay" required>
+
+<label for="interestRate">Lãi suất hàng tháng (%):</label>
+<input type="number" id="interestRate" placeholder="Nhập lãi suất hàng tháng" required>
+
+<button onclick="calculateInterest()">Tính toán</button>
+
+<h2>Kết quả:</h2>
+<p id="result"></p>
+
+<script>
+  function calculateInterest() {
+    // Lấy giá trị từ các ô input
+    var principal = parseFloat(document.getElementById('principal').value);
+    var months = parseInt(document.getElementById('months').value);
+    var interestRate = parseFloat(document.getElementById('interestRate').value);
+
+    // Tính lãi ngân hàng
+    var totalInterest = 0;
+    var totalAmount = principal;
+
+    for (var i = 0; i < months; i++) {
+      var interest = (totalAmount * interestRate) / 100;
+      totalAmount += interest;
+      totalInterest += interest;
+    }
+
+    // Hiển thị kết quả
+    var resultElement = document.getElementById('result');
+    resultElement.innerHTML = 'Số tiền sau ' + months + ' tháng là: ' + totalAmount.toFixed(2) +
+      '<br>Lãi thu được là: ' + totalInterest.toFixed(2);
+  }
+</script>
+
+</body>
+</html>

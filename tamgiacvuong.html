@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tam giác vuông</title>
+  <style>
+    .triangle {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .top {
+      border-width: 0 50px 50px 50px;
+      border-color: transparent transparent #007bff transparent;
+    }
+
+    .right {
+      border-width: 50px 0 50px 50px;
+      border-color: transparent transparent transparent #007bff;
+    }
+
+    .bottom {
+      border-width: 50px 50px 0 50px;
+      border-color: #007bff transparent transparent transparent;
+    }
+
+    .left {
+      border-width: 50px 50px 50px 0;
+      border-color: transparent #007bff transparent transparent;
+    }
+  </style>
+</head>
+<body>
+<div class="triangle top"></div>
+<div class="triangle right"></div>
+<div class="triangle bottom"></div>
+<div class="triangle left"></div>
+</body>
+</html>

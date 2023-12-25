@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triangle Drawing</title>
+  <style>
+    /* Optional: Style the triangle */
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 87px solid red;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  // Sử dụng vòng lặp while để vẽ hình tam giác
+  function drawTriangle() {
+    // Số hàng (chiều cao của tam giác)
+    var rows = 5;
+
+    // Biến đếm cho hàng
+    var i = 0;
+
+    // Vòng lặp while
+    while (i < rows) {
+      // Tạo một div mới (tam giác)
+      var triangle = document.createElement('div');
+      // Thêm class để áp dụng CSS (tùy chọn)
+      triangle.classList.add('triangle');
+      // Thêm div vào body
+      document.body.appendChild(triangle);
+
+      // Tăng biến đếm
+      i++;
+    }
+  }
+
+  // Gọi hàm để vẽ tam giác khi trang được tải
+  window.onload = drawTriangle;
+</script>
+
+</body>
+</html>
+

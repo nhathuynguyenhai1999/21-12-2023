@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vẽ hình chữ nhật</title>
+  <style>
+    /* Optional: Style the rectangle */
+    .rectangle {
+      width: 50px;
+      height: 30px;
+      background-color: blue;
+      margin: 5px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  // Sử dụng vòng lặp để tạo và vẽ các hình chữ nhật
+  function drawRectangles() {
+    // Số hàng và số cột
+    var rows = 5;
+    var columns = 3;
+
+    // Lặp qua từng hàng
+    for (var i = 0; i < rows; i++) {
+      // Lặp qua từng cột trong mỗi hàng
+      for (var j = 0; j < columns; j++) {
+        // Tạo một div mới (hình chữ nhật)
+        var rectangle = document.createElement('div');
+        // Thêm class để áp dụng CSS (tùy chọn)
+        rectangle.classList.add('rectangle');
+        // Thêm div vào body
+        document.body.appendChild(rectangle);
+      }
+
+      // Thêm dòng mới (tạo khoảng cách giữa các hàng)
+      document.body.appendChild(document.createElement('br'));
+    }
+  }
+
+  // Gọi hàm để vẽ hình chữ nhật khi trang được tải
+  window.onload = drawRectangles;
+</script>
+
+</body>
+</html>
+

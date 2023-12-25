@@ -4,28 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fibonacci Sequence</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+  </style>
 </head>
 <body>
 
-<script>
-  function generateFibonacci(n) {
-    var fibonacciSequence = [];
+<h2>Dãy số Fibonacci</h2>
+<p id="fibonacci-day-so"></p>
 
+<script>
+  // Hàm tính dãy Fibonacci sử dụng vòng lặp for
+  function generateFibonacci(n) {
+    var fibxetham = [];
     for (var i = 0; i < n; i++) {
       if (i <= 1) {
-        fibonacciSequence.push(i);
+        fibxetham.push(i);
       } else {
-        var nextNumber = fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
-        fibonacciSequence.push(nextNumber);
+        fibxetham.push(fibxetham[i - 1] + fibxetham[i - 2]);
       }
     }
-
-    return fibonacciSequence;
+    return fibxetham;
   }
 
-  // Hiển thị 20 số đầu tiên trong dãy Fibonacci
-  var fibonacci20 = generateFibonacci(20);
-  document.write("Dãy Fibonacci đầu tiên gồm 20 số: " + fibonacci20.join(", "));
+  // Số phần tử trong dãy Fibonacci
+  var dayfibonacci = 10;
+
+  // Gọi hàm và lấy dãy Fibonacci
+  var fibonacciSequence = generateFibonacci(dayfibonacci);
+
+  // Hiển thị dãy Fibonacci trên trang HTML
+  document.getElementById("fibonacci-day-so").innerHTML = "Fibonacci Sequence: " + fibonacciSequence.join(", ");
 </script>
 
 </body>
