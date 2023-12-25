@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title Tìm giá trị trong mảng</title>
+</head>
+<body>
+  <h3>Mục đích</h3>
+  <strong>Viết một chương trình JavaScript để tìm một giá tri được nhập vào từ hộp thoại có nằm trong mảng hay không.
+    Nếu có in ra vị trí của phần tử đó.
+    Trong trường hợp không tìm thấy thông báo không tìm thấy phần tử.</strong><br/>
+<script>
+  let value = prompt("Enter a number: ");
+  let numbers = [-3, 5, 1, 3, 2, 10];
+  let index = -1;
+  for (let i = 0; i < numbers.length; i++) {
+    if (value == numbers[i]) {
+      index = i;
+    }
+  }
+  if(index>-1){
+    document.write("Value " + value + "found at " + index);
+  }
+  else{
+    document.write("Value " + value + " not found");
+  }
+</script>
+</body>
+</html>
